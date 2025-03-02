@@ -10,12 +10,14 @@
   },
   "permissions": [
       "<all_urls>",
-      "contextMenus"
+      "contextMenus",
+      "downloads",
+      "activeTab"
   ],
   "browser_action": {
       "default_icon": "icons/48.png",
       "default_title": "Addon-Template",
-      "default_popup": "html/popup.html"
+      "default_popup": "popup.html"
   },
   "background": {
       "scripts": [
@@ -31,7 +33,7 @@
               "lib/ffmpeg.min.js",
               "lib/ffmpeg-core.js",
               "js/content.js",
-              "content_script.js"
+              "content-script.js"
           ]
       }
   ],

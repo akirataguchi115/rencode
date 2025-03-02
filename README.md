@@ -11,3 +11,7 @@ ok i have to use content script for ffmpeg since background script cannot do any
 however i need background script for registering the contextmenu
 
 immaculate i have almost managed to send a message from bg script to defined content script quick saving here
+
+i dont think i still quite understand what the javascript first class citizen means. aren't all js variables first class citizens?
+
+ok phew! next stop is to update ffmpeg.wasm to 12.x which has av1 decoder support. wild times!
