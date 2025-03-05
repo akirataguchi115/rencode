@@ -1,6 +1,6 @@
 "use strict";
 
-const { createFFmpeg, fetchFile } = FFmpeg;
+const { FFmpeg } = FFmpegWASM;
 
 const ffmpeg = createFFmpeg({
     corePath: browser.runtime.getURL("lib/ffmpeg-core.js"),

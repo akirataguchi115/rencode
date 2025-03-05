@@ -15,3 +15,23 @@ immaculate i have almost managed to send a message from bg script to defined con
 i dont think i still quite understand what the javascript first class citizen means. aren't all js variables first class citizens?
 
 ok phew! next stop is to update ffmpeg.wasm to 12.x which has av1 decoder support. wild times!
+
+ok this ffmpeg.wasm is 11.6
+
+11.x uses import { createFFmpeg } from '@ffmpeg/ffmpeg'
+12.x uses import { FFmpeg } from '@ffmpeg/ffmpeg'
+
+but my 11.x does not even use the import way! it uses the const { createFFmpeg} = FFmpeg
+
+iiiii think that the current way of initiating ffmpeg from the distributables is wrong
+i need an example
+
+line 28 transcode.html it DOES use a core
+
+{
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.10",
+    "@ffmpeg/ffmpeg": "^0.12.15",
+    "@ffmpeg/util": "^0.12.2"
+  }
+}

@@ -3,22 +3,12 @@
   "name": "ffmpeg.wasm demo",
   "version": "1.0.1",
   "description": "ffmpeg.wasm demo",
-  "icons": {
-      "32": "icons/32.png",
-      "48": "icons/48.png",
-      "96": "icons/96.png"
-  },
   "permissions": [
       "<all_urls>",
       "contextMenus",
       "downloads",
       "activeTab"
   ],
-  "browser_action": {
-      "default_icon": "icons/48.png",
-      "default_title": "Addon-Template",
-      "default_popup": "popup.html"
-  },
   "background": {
       "scripts": [
           "background-script.js"
@@ -30,19 +20,12 @@
               "<all_urls>"
           ],
           "js": [
-              "lib/ffmpeg.min.js",
-              "lib/ffmpeg-core.js",
-              "js/content.js",
-              "content-script.js"
+              "lib/ffmpeg.js",
+              "lib/index.js"
           ]
       }
   ],
-  "options_ui": {
-      "page": "html/options.html"
-  },
   "web_accessible_resources": [
-      "data/*",
-      "html/*",
       "lib/*"
   ],
   "content_security_policy": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
