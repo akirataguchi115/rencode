@@ -1,32 +1,5 @@
-"use strict";
-
 const { FFmpeg } = FFmpegWASM;
-const { fetchFile } = FFmpegUtil
 let ffmpeg = null;
-
-const transcode = async ({ target: { files } }) => {
-  const message = document.getElementById('message');
-  if (ffmpeg === null) {
-    ffmpeg = new FFmpeg();
-    ffmpeg.on("log", ({ message }) => {
-      console.log(message);
-    })
-    await ffmpeg.load({
-      coreURL: "/lib/ffmpeg-core.js",
-    });
-  }
-  const { name } = files[0];
-  await ffmpeg.writeFile(name, await fetchFile(files[0]));
-  message.innerHTML = 'Start transcoding';
-  console.time('exec');
-  await ffmpeg.exec(['-i', name,  'output.mp4']);
-  console.timeEnd('exec');
-  message.innerHTML = 'Complete transcoding';
-  const data = await ffmpeg.readFile('output.mp4');
-
-  const video = document.getElementById('output-video');
-  video.src = URL.createObjectURL(new Blob([data.buffer], { type: 'video/mp4' }));
-}
 
 async function rencode(inputFileName, outputFileName, commandStr, videoUrl) {
   const message = document.getElementById('message');
@@ -35,9 +8,12 @@ async function rencode(inputFileName, outputFileName, commandStr, videoUrl) {
     ffmpeg.on("log", ({ message }) => {
       console.log(message);
     })
+    console.log('THIS PRINTS OUT')
     await ffmpeg.load({
       coreURL: "/lib/ffmpeg-core.js",
+      wasmURL: "/lib/ffmpeg-core.was"
     });
+    console.log('THIS DOESNT')
   }
       // Command should start with "ffmpeg"
       const commandList = commandStr.split(' ');

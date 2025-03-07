@@ -37,3 +37,7 @@ line 28 transcode.html it DOES use a core
 }
 
 hahahahhaah great its called transcode, not re-encode you idiot
+
+okok so one shouldnt maybe load .wasm inside <script>
+
+debug from line 12

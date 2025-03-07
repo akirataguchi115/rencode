@@ -16,19 +16,8 @@
   },
   "browser_action": {
     "default_title": "Addon-Template",
-    "default_popup": "html/popup.html"
+    "default_popup": "empty.html"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "lib/ffmpeg.js",
-        "lib/index.js"
-      ]
-    }
-  ],
   "web_accessible_resources": [
     "lib/*"
   ],
