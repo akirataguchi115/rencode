@@ -8,10 +8,12 @@ async function rencode(inputFileName, outputFileName, commandStr, videoUrl) {
     ffmpeg.on("log", ({ message }) => {
       console.log(message);
     })
+
     console.log('THIS PRINTS OUT')
+    // voi olla väärä path string
     await ffmpeg.load({
-      coreURL: "/lib/ffmpeg-core.js",
-      wasmURL: "/lib/ffmpeg-core.was"
+      coreURL: browser.runtime.getURL("lib/ffmpeg-core.js"),
+      wasmURL: browser.runtime.getURL("lib/ffmpeg-core.wasm")
     });
     console.log('THIS DOESNT')
   }
@@ -70,9 +72,6 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     return true; // Ensures sendResponse works asynchronously
 });
 
-
-
-
 async function runFFmpeg(inputFileName, outputFileName, commandStr, videoUrl) {
     // If FFmpeg is already loaded, exit and reload it to ensure a fresh session
     if (ffmpeg.isLoaded()) {
@@ -119,26 +118,3 @@ function downloadFile(blob, fileName) {
     a.download = fileName;
     a.click();
 }
-
-// // Listen for messages from the background script
-// browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-//     if (message.action === "processVideo" && message.videoUrl) {
-//         const videoUrl = message.videoUrl;
-
-//         // Extract the file name from the video URL
-//         const inputFileName = videoUrl.substring(videoUrl.lastIndexOf('/') + 1);  // Extract file name from the URL
-//         const outputFileName = `output_copy_${inputFileName}`;
-
-//         // Construct the FFmpeg command to copy the video (no encoding, just copy the streams)
-//         const commandStr = `ffmpeg -i ${inputFileName} -c copy ${outputFileName}`;
-
-//         // Debugging: log the inputFileName to the console
-//         console.log("Input file name: ", inputFileName);
-
-//         // Run FFmpeg with the appropriate file and command
-//         runFFmpeg(inputFileName, outputFileName, commandStr, videoUrl);
-        
-//         sendResponse({ status: "Processing video..." });
-//     }
-//     return true; // Ensures sendResponse works asynchronously
-// });
