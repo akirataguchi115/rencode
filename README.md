@@ -32,7 +32,7 @@ line 28 transcode.html it DOES use a core
   "dependencies": {
     "@ffmpeg/core": "^0.12.10",
     "@ffmpeg/ffmpeg": "^0.12.15",
-    "@ffmpeg/util": "^0.12.2"
+    "@ffmpeg/util": "^0.12.1"
   }
 }
 
@@ -41,3 +41,14 @@ hahahahhaah great its called transcode, not re-encode you idiot
 okok so one shouldnt maybe load .wasm inside <script>
 
 debug from line 12
+
+wow i would have never thought a buggy gpg implementation on windows would prevent me from commiting and saving my progress
+
+do i even have to load the wasm
+
+ok next ill do a mvp test if a simple index.html will load the index.js
+
+is it possible that util 12.2 is non-umd and 12.1 is still umd
+why did no one speak about this
+
+next up try to mimic the usage example to avoid async problems

@@ -10,12 +10,14 @@ async function rencode(inputFileName, outputFileName, commandStr, videoUrl) {
     })
 
     console.log('THIS PRINTS OUT')
-    // voi olla väärä path string
-    await ffmpeg.load({
-      coreURL: browser.runtime.getURL("lib/ffmpeg-core.js"),
-      wasmURL: browser.runtime.getURL("lib/ffmpeg-core.wasm")
-    });
+    const { toBlobURL } = FFmpegUtil;
+    
+    // await ffmpeg.load({
+    //   coreURL: await toBlobURL('lib/ffmpeg-core.js', 'text/javascript'),
+    //   wasmURL: await toBlobURL('lib/ffmpeg-core.wasm', 'application/wasm')
+    // });
     console.log('THIS DOESNT')
+    ffmpeg.load()
   }
       // Command should start with "ffmpeg"
       const commandList = commandStr.split(' ');
