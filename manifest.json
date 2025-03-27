@@ -16,7 +16,7 @@
   },
   "browser_action": {
     "default_title": "Addon-Template",
-    "default_popup": "empty.html"
+    "default_popup": "rencode.html"
   },
   "web_accessible_resources": [
     "lib/*"

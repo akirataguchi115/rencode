@@ -52,3 +52,5 @@ is it possible that util 12.2 is non-umd and 12.1 is still umd
 why did no one speak about this
 
 next up try to mimic the usage example to avoid async problems
+
+next up try to figure why doesn't ffmpeg load correctly
