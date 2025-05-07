@@ -54,3 +54,11 @@ why did no one speak about this
 next up try to mimic the usage example to avoid async problems
 
 next up try to figure why doesn't ffmpeg load correctly
+
+https://www.w3schools.com/html/html5_video.asp
+
+July 26th 2023 12.x was released
+
+try out first with 12.1 if 12.2 is accidentally non-umd
+
+crop seems to load core.js and core.wasm so it seems both are needed in 0.12.10

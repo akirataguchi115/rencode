@@ -19,6 +19,7 @@ const transcode = async (videoUrl) => {
       console.log('WASM URL:', wasmURL);
 
       // toBlobURL is used to bypass CORS issue, urls with the same domain can be used directly.
+      // what should this await do here? should the execution stop here
       await ffmpeg.load({
         coreURL: await toBlobURL(coreURL, 'text/javascript'),
         wasmURL: await toBlobURL(wasmURL, 'application/wasm'),
