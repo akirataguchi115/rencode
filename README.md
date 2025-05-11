@@ -62,3 +62,15 @@ July 26th 2023 12.x was released
 try out first with 12.1 if 12.2 is accidentally non-umd
 
 crop seems to load core.js and core.wasm so it seems both are needed in 0.12.10
+
+right so i have gotten the original non .12 version from aniny21 browser extension repo
+
+now i just gotta check how to format a given 0.11 version to the aniny21 version
+
+test 11.0 from unpkg if it works on h.264
+
+ok wtf which version does work with av1
+
+ok huge news: 0.9 alpha 2 is the only version that supports av1 encoding so if that doesnt work none of this actuall works on my usecase
+
+this is just a hunch but ffmpeg util might be only for .12 onwards
