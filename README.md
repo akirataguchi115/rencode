@@ -74,3 +74,13 @@ ok wtf which version does work with av1
 ok huge news: 0.9 alpha 2 is the only version that supports av1 encoding so if that doesnt work none of this actuall works on my usecase
 
 this is just a hunch but ffmpeg util might be only for .12 onwards
+
+next try loading 0.9 alpha 2 in the current code example of my own
+
+do it little by little so you can debug whats up and PRAY TO GOD its not the loading part
+
+does .12.alpha-2 have av1 encoder
+
+ok now the ffmpeg.wasm version is v0.11.6 and it works...unpkg only lists ffmpeg/ffmpeg 11.6 available but not for ffmpeg/core, which includes the .wasm WHAT THE FUCK
+
+now i gotta refactor all the unnecessary stuff away so i can try to downgrade to 0.9-alpha.2 and after that upgrade to .12-alpha.2 if that would have faster av1 transcoding

@@ -15,7 +15,7 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
 
       // Send the video URL to the popup for processing
       browser.tabs.create({
-          url: browser.runtime.getURL("rencode.html")
+          url: browser.runtime.getURL("empty.html")
       }, (newTab) => {
           browser.tabs.onUpdated.addListener(function listener(tabId, changeInfo, tab) {
               if (tabId === newTab.id && changeInfo.status === "complete") {
